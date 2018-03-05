@@ -1,0 +1,10 @@
+# Separates two instance configurations from one module into two separate modules
+
+module.prometheus.aws_ebs_volume.prometheus_cloudwatch: module.prometheus_cloudwatch.aws_ebs_volume.prometheus
+module.prometheus.aws_ebs_volume.prometheus_kubernetes: module.prometheus_kubernetes.aws_ebs_volume.prometheus
+module.prometheus.aws_elb.prometheus_cloudwatch: module.prometheus_cloudwatch.aws_elb.prometheus
+module.prometheus.aws_elb.prometheus_kubernetes: module.prometheus_kubernetes.aws_elb.prometheus
+module.prometheus.aws_instance.prometheus_cloudwatch: module.prometheus_cloudwatch.aws_instance.prometheus
+module.prometheus.aws_instance.prometheus_kubernetes: module.prometheus_kubernetes.aws_instance.prometheus
+module.prometheus.aws_route53_record.prometheus_cloudwatch: module.prometheus_cloudwatch.aws_route53_record.prometheus
+module.prometheus.aws_route53_record.prometheus_kubernetes: module.prometheus_kubernetes.aws_route53_record.prometheus
